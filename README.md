@@ -2,6 +2,33 @@
 
 This project implements a real-time moderation system for Microsoft Teams using Azure Logic Apps and Azure AI Content Safety. The system automatically analyzes messages posted in Teams channels and sends an email alert if inappropriate content is detected.
 
+<img width="1612" height="776" alt="Image" src="https://github.com/user-attachments/assets/09416191-819b-4074-9bdf-f7ff253b0ce2" />
+
+## 🔧 Logic App Setup
+
+### **Trigger:**
+- **Connector:** Microsoft Teams
+- **Action:** `When a new message is added to a chat or channel`
+- Purpose: Captures new messages posted in the selected channel in real time.
+
+### **Loop:**
+- **Action:** `For Each`
+- Used to process each message in a batch (Microsoft Teams may return multiple messages).
+
+### **Message Retrieval:**
+- **Action:** `Get message details`
+- Ensures the full message content is extracted from Teams.
+
+### **Content Safety API Integration:**
+- **Action:** HTTP POST request
+- **Target:** Azure AI Content Safety API (`eastus.api.cognitive.microsoft.com`)
+- **Payload:** Includes message text and analysis categories (hate, violence, sexual, self_harm)
+
+### **Condition Block:**
+- Custom expression checks:
+  ```text
+  If any severity score > 0
+
 ---
 
 ## 📌 Features
