@@ -39,6 +39,19 @@ This project implements a real-time moderation system for Microsoft Teams using 
 - Serverless and scalable using Logic Apps and HTTP connector
 - Fully customizable and extendable
 
+Recommendations for Future Improvements
+✅ Store flagged messages in Azure Table Storage for audit trails
+
+✅ Visualize moderation history in Power BI via Logic App logs
+
+✅ Auto-notify the user via Teams chatbot or Adaptive Card
+
+✅ Integrate Azure Functions for pre-processing or translation
+
+✅ Add retry policy for HTTP failures
+
+## Youtube link- [https://youtu.be/275cG0HjyQg](https://www.youtube.com/watch?v=275cG0HjyQg&ab_channel=KarthikRaghavendraUrala)
+
 ---
 
 ## 🔧 Architecture Overview
